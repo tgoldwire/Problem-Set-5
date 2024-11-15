@@ -7,6 +7,8 @@ db_path = '/Users/tavisgoldwire/Desktop/world_1.sqlite'
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
+
+#Question 2
 # Insert South Sudan into the country table
 insert_south_sudan = """
 INSERT INTO country (Name, Continent, Region, Population, IndepYear, Code)
@@ -20,15 +22,17 @@ try:
 except sqlite3.IntegrityError as e:
     print("Failed to add South Sudan:", e)
 
+
+#Question 3
 # Insert cities for South Sudan into the city table
 insert_city_1 = """
 INSERT INTO city (Name, CountryCode, Population)
-VALUES ('Juba', 'SSD', 400000);
+VALUES ('Juba', 'SSD', 450000);
 """
 
 insert_city_2 = """
 INSERT INTO city (Name, CountryCode, Population)
-VALUES ('Wau', 'SSD', 40000);
+VALUES ('Wau', 'SSD', 320752);
 """
 
 # Try inserting cities
@@ -42,3 +46,4 @@ except sqlite3.IntegrityError as e:
 # Commit the changes and close the connection
 conn.commit()
 conn.close()
+
